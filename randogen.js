@@ -1,16 +1,16 @@
-function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
+// This function clear all the values
+function clearScreen() {
+    document.getElementById("result").value = "";
 }
-
-console.log(getRandomInt(11));
-// Expected output: 0, 1 or 2
-
-var http = require('http');
-var fs = require('fs');
-http.createServer(function (req, res) {
-  fs.readFile('index.html', function(err, data) {
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    res.write(data);
-    return res.end();
-  });
-}).listen(8080);
+ 
+// This function display values
+function display(value) {
+    document.getElementById("result").value += value;
+}
+ 
+// This function evaluates the expression and returns result
+function calculate() {
+    var p = document.getElementById("result").value;
+    var q = eval(p);
+    document.getElementById("result").value = q;
+}
